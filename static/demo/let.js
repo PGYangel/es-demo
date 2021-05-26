@@ -40,6 +40,31 @@ console.log(window.a); // undefined
 // let不存在变量提升
 console.log(b); // undefined
 var b = 6;
-
 // console.log(c); // Uncaught ReferenceError: c is not defined
 // let c = 7;
+
+// 暂时性死区
+// let定义的作用域内，不能在声明之前使用
+/* 
+var d = 5;
+if (true) {
+  d = 6;
+  let d;
+}
+function foo(a = b, b = 2) {
+  console.log(a, b);
+}
+foo(); 
+*/
+
+// 块级作用域
+// for (var i = 0; i < 3; i++) {
+//   console.log("循环内：" + i);
+// }
+for (let i = 0; i < 3; i++) {
+  console.log("循环内：" + i);
+}
+console.log("循环外：" + i); // 使用let，外面会取不到i，报错：Uncaught ReferenceError: i is not defined
+
+// 块级作用域必须要{}进行包裹
+// if(true) let a = 5; //这样会报错
