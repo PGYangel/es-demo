@@ -27,5 +27,8 @@
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.1",
     "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "core-js": "^3.13.0"
   }
 }
