@@ -26,7 +26,7 @@ console.log("forEach------------------------------");
 /* 
 for和forEach之间的区别是什么：
 for是可以跳出循环，而forEach是不能够跳出循环
-也就是forEach不能使用break和continue两个关键词。
+也就是forEach不能使用break和continue两个关键字。
 */
 
 // map

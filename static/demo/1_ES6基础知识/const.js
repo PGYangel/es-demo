@@ -19,7 +19,7 @@ console.log(PI);
 // const定义常量
 /* 
 const a = 5; // const定义时就必须赋值
-a = 6; //Uncaught TypeError: Assignment to constant variable.
+a = 6; // Uncaught TypeError: Assignment to constant variable.
 */
 
 // const 定义的常量是让栈内存空间值不变
