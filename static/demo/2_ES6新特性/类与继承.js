@@ -74,6 +74,13 @@ console.log('-------------------------------------------------------------------
 
 /* 
 ES6 中的类与继承
+
+class
+extends
+constructor
+static
+super
+get / set
 */
 
 // 类
@@ -83,31 +90,40 @@ class People2 {
         // 实例属性
         this.name = name
         this.age = age
+        this._sex = -1
 
         People2.count++
     }
-    
+    // 使用get和set也可以定义实例属性
+    // 定义时必须要在类的顶层位置进行定义
+    // 定义后在console打印类实例，发现定义的属性是半透明，隐藏属性
+    // 只定义get表示属性只读，只定义set表示属性只写
+    // 这种属性应用场景一般都是需要对属性做一定的业务逻辑判断进行定义
     get sex() {
-        return '男'
+        return this._sex
     }
 
     set sex(val) {
-
+        this._sex = val
     }
 
     // 实例方法
     showName() {
         console.log('showName' + this.name);
     }
+
+    // 静态方法
+    static getCount() {
+        console.log('getCount：' + People2.count)
+    }
 }
 
 // 静态属性
+// ES6里面暂时不支持在类里面用static进行定义静态属性
 People2.count = 0;
-// 静态方法
-People2.getCount = () => {
-    console.log('getCount：' + People2.count)
-}
+
 let p3 = new People2('王五', 18)
+p3.sex = '女'
 console.log(p3);
 People2.getCount()
 
